@@ -1,0 +1,45 @@
+---
+import type { Props } from '@astrojs/types';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<meta name="description" content={description} />
+		<title>{Astro.props.title || `Analog Revival: Film Photography Community`}</title>
+	</head>
+	<body class="bg-analog-light text-analog-dark font-body">
+		<header class="bg-white shadow-md py-4">
+			<div class="container mx-auto px-4 flex items-center justify-between">
+				<a href="/" class="text-2xl font-display font-bold">Analog Revival</a>
+				<nav>
+					<ul class="flex space-x-6">
+						<li><a href="/" class="hover:text-analog-accent">Home</a></li>
+						<li><a href="/blog" class="hover:text-analog-accent">Blog</a></li>
+						<li><a href="#" class="hover:text-analog-accent">Forum</a></li>
+						<li><a href="#" class="hover:text-analog-accent">Gallery</a></li>
+						<li><a href="#" class="hover:text-analog-accent">Map</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main class="container mx-auto py-8 px-4">
+			<slot />
+		</main>
+		<footer class="bg-analog-dark text-white py-4 text-center">
+			<div class="container mx-auto px-4">
+				© {new Date().getFullYear()} Analog Revival: Film Photography Community
+			</div>
+		</footer>
+	</body>
+</html>

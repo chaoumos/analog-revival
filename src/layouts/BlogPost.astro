@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import type { Props } from '@astrojs/types';
+
+interface Props {
+	title: string;
+	description: string;
+pubDate: string;
+}
+
+const { title, description, pubDate } = Astro.props;
+
+const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Layout title={title} description={description}>
+	<article class="prose lg:prose-xl">
+		<h1>{title}</h1>
+		<time datetime={pubDate}>{formattedDate}</time>
+		<p>{description}</p>
+		<slot />
+	</article>
+</Layout>

@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = await Astro.glob('../../content/blog/*.md');
+---
+
+<Layout title="Blog" description="Read our latest articles on film photography.">
+	<section class="py-8">
+		<h1 class="text-3xl font-bold mb-4">Blog</h1>
+		<ul>
+			{posts.map((post) => (
+				<li class="mb-4">
+					<a href={post.url} class="text-xl font-semibold hover:text-analog-accent">{post.frontmatter.title}</a>
+					<time datetime={post.frontmatter.pubDate} class="text-gray-500 block text-sm">{new Date(post.frontmatter.pubDate).toLocaleDateString()}</time>
+					<p class="text-gray-700">{post.frontmatter.description}</p>
+				</li>
+			))}
+		</ul>
+	</section>
+</Layout>
