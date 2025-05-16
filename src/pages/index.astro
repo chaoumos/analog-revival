@@ -1,51 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const siteTitle = "Analog Revival: Film Photography Community";
-const siteDescription = "Share your passion for analog photography! Explore film reviews, darkroom techniques, camera guides, and connect with fellow enthusiasts.";
+const siteTitle = "Analog Revival: Rediscovering Film Photography";
+const siteDescription = "Dive into the heart of analog photography. Film reviews, darkroom techniques, vintage camera spotlights, and a community for film enthusiasts.";
 ---
 
 <Layout title={siteTitle} description={siteDescription}>
-	<section class="hero bg-white py-12 rounded-lg shadow-md">
-		<div class="container mx-auto px-4">
-			<h1 class="text-4xl font-display font-bold mb-4">Welcome to Analog Revival</h1>
-			<p class="text-lg mb-8">A community dedicated to the art and passion of film photography. Whether you're an experienced shooter or just starting your journey, you'll find a home here.</p>
-			<a href="/blog" class="bg-analog-accent text-white py-2 px-4 rounded hover:bg-analog-dark">Explore the Blog</a>
-		</div>
-	</section>
+  <section class="py-12">
+    <h1 class="text-4xl font-bold text-warm-gray-900 mb-4">Welcome to Analog Revival</h1>
+    <p class="text-lg text-warm-gray-700 mb-8">A space dedicated to the art and craft of film photography. Explore film reviews, darkroom techniques, vintage camera spotlights, and join our community of film enthusiasts.</p>
 
-	<section class="features py-8">
-		<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-			<div class="feature-item bg-white rounded-lg shadow-md p-4">
-				<h2 class="text-xl font-semibold mb-2">Film Reviews</h2>
-				<p>Read in-depth reviews of various film stocks, from classic favorites to hidden gems.</p>
-				<img src="https://placehold.co/600x400.png" alt="Film Canisters" data-ai-hint="various film canisters" />
-			</div>
-			<div class="feature-item bg-white rounded-lg shadow-md p-4">
-				<h2 class="text-xl font-semibold mb-2">Darkroom Techniques</h2>
-				<p>Master the art of developing and printing your own film with our detailed tutorials.</p>
-				<img src="https://placehold.co/600x400.png" alt="Darkroom Equipment" data-ai-hint="darkroom equipment and supplies" />
-			</div>
-			<div class="feature-item bg-white rounded-lg shadow-md p-4">
-				<h2 class="text-xl font-semibold mb-2">Camera Guides</h2>
-				<p>Find the perfect camera for your needs with our comprehensive guides and recommendations.</p>
-				<img src="https://placehold.co/600x400.png" alt="Vintage Camera" data-ai-hint="a vintage film camera" />
-			</div>
-			<div class="feature-item bg-white rounded-lg shadow-md p-4">
-				<h2 class="text-xl font-semibold mb-2">Community Forum</h2>
-				<p>Connect with fellow film enthusiasts, share your work, and ask questions.</p>
-				<img src="https://placehold.co/600x400.png" alt="People discussing photography" data-ai-hint="people discussing photography" />
-			</div>
-			<div class="feature-item bg-white rounded-lg shadow-md p-4">
-				<h2 class="text-xl font-semibold mb-2">User Gallery</h2>
-				<p>Showcase your best film photos and get inspired by the work of others.</p>
-				<img src="https://placehold.co/600x400.png" alt="Film photographs on display" data-ai-hint="film photographs on display" />
-			</div>
-			<div class="feature-item bg-white rounded-lg shadow-md p-4">
-				<h2 class="text-xl font-semibold mb-2">Local Film Map</h2>
-				<p>Find film labs and camera stores near you.</p>
-				<img src="https://placehold.co/600x400.png" alt="Map with film locations" data-ai-hint="map with pins indicating film-related locations" />
-			</div>
-		</div>
-	</section>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-2xl font-semibold text-warm-gray-800 mb-4">Explore Film Reviews</h2>
+        <p class="text-warm-gray-600">Dive into detailed analyses of various film stocks, complete with sample photos and expert opinions.</p>
+        <img src="https://placehold.co/800x400.png" alt="Film roll" data-ai-hint="film roll" class="mt-4 rounded-md shadow-md"/>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-warm-gray-800 mb-4">Discover Darkroom Techniques</h2>
+        <p class="text-warm-gray-600">Learn step-by-step guides and tutorials to master the art of darkroom printing and development.</p>
+        <img src="https://placehold.co/800x400.png" alt="Darkroom equipment" data-ai-hint="darkroom equipment" class="mt-4 rounded-md shadow-md"/>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <h2 class="text-3xl font-semibold text-warm-gray-900 mb-4">Join the Community</h2>
+      <p class="text-lg text-warm-gray-700">Share your work, discuss film-related topics, and connect with fellow film photographers in our community forum.</p>
+    </div>
+  </section>
 </Layout>

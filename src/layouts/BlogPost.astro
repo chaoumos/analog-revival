@@ -1,27 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import type { Props } from '@astrojs/types';
+import { format } from 'date-fns';
 
 interface Props {
-	title: string;
-	description: string;
-pubDate: string;
+  frontmatter: {
+    title: string;
+    description: string;
+    pubDate: string;
+    heroImage?: string;
+    heroImageAlt?: string;
+  };
 }
 
-const { title, description, pubDate } = Astro.props;
-
-const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const { frontmatter } = Astro.props;
+const formattedDate = format(new Date(frontmatter.pubDate), 'MMMM dd, yyyy');
 ---
 
-<Layout title={title} description={description}>
-	<article class="prose lg:prose-xl">
-		<h1>{title}</h1>
-		<time datetime={pubDate}>{formattedDate}</time>
-		<p>{description}</p>
-		<slot />
-	</article>
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <article class="prose lg:prose-xl mx-auto py-8">
+    <h1 class="text-3xl font-bold text-warm-gray-900 mb-4">{frontmatter.title}</h1>
+    <p class="text-sm text-warm-gray-500 mb-2">Published on: {formattedDate}</p>
+    {frontmatter.heroImage && (
+      <img src={frontmatter.heroImage} alt={frontmatter.heroImageAlt} class="rounded-md shadow-md mb-4" />
+    )}
+    <slot />
+  </article>
 </Layout>

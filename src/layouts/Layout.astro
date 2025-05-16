@@ -1,9 +1,8 @@
 ---
-import type { Props } from '@astrojs/types';
-
+import '../../styles/global.css';
 interface Props {
-	title?: string;
-	description?: string;
+  title?: string;
+  description?: string;
 }
 
 const { title, description } = Astro.props;
@@ -11,35 +10,32 @@ const { title, description } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width">
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-		<meta name="description" content={description} />
-		<title>{Astro.props.title || `Analog Revival: Film Photography Community`}</title>
-	</head>
-	<body class="bg-analog-light text-analog-dark font-body">
-		<header class="bg-white shadow-md py-4">
-			<div class="container mx-auto px-4 flex items-center justify-between">
-				<a href="/" class="text-2xl font-display font-bold">Analog Revival</a>
-				<nav>
-					<ul class="flex space-x-6">
-						<li><a href="/" class="hover:text-analog-accent">Home</a></li>
-						<li><a href="/blog" class="hover:text-analog-accent">Blog</a></li>
-						<li><a href="#" class="hover:text-analog-accent">Forum</a></li>
-						<li><a href="#" class="hover:text-analog-accent">Gallery</a></li>
-						<li><a href="#" class="hover:text-analog-accent">Map</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
-		<main class="container mx-auto py-8 px-4">
-			<slot />
-		</main>
-		<footer class="bg-analog-dark text-white py-4 text-center">
-			<div class="container mx-auto px-4">
-				© {new Date().getFullYear()} Analog Revival: Film Photography Community
-			</div>
-		</footer>
-	</body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <meta name="author" content="Analog Revival">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{Astro.props.title || `${"Analog Revival: Rediscovering Film Photography"}`}</title>
+</head>
+<body class="bg-warm-gray-50">
+  <div class="container mx-auto px-4 py-8">
+    <header class="flex justify-between items-center mb-8">
+      <a href="/" class="text-2xl font-bold text-warm-gray-800">Analog Revival</a>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="/" class="text-warm-gray-600 hover:text-warm-gray-800">Home</a></li>
+          <li><a href="/blog" class="text-warm-gray-600 hover:text-warm-gray-800">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="mt-12 py-4 text-center text-warm-gray-500 border-t border-warm-gray-200">
+      © {new Date().getFullYear()} Analog Revival: Rediscovering Film Photography
+    </footer>
+  </div>
+</body>
 </html>
